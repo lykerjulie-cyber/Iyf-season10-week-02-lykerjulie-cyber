@@ -10,20 +10,33 @@
 
 /* ========== BASE TYPOGRAPHY ========== */
 :root {
+  /* Fonts */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Lato', sans-serif;
   
+  /* Colors */
   --color-text: #1a1a1a;
   --color-heading: #111111;
   --color-muted: #666666;
+  
+  /* Type Scale - Major Second 1.125 or Perfect Fourth 1.333 */
+  --font-xs: 0.75rem;     /* 12px */
+  --font-sm: 0.875rem;    /* 14px */
+  --font-base: 1rem;      /* 16px - your body size */
+  --font-lg: 1.125rem;    /* 18px */
+  --font-xl: 1.25rem;     /* 20px */
+  --font-2xl: 1.5rem;     /* 24px */
+  --font-3xl: 1.875rem;   /* 30px */
+  --font-4xl: 2.25rem;    /* 36px */
 }
 
 html {
-  font-size: 16px; /* base size = 1rem */
+  font-size: 16px; /* 1rem = 16px */
 }
 
 body {
   font-family: var(--font-body);
+  font-size: var(--font-base);
   line-height: 1.6;
   color: var(--color-text);
   background-color: #ffffff;
@@ -38,33 +51,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-  font-size: 2.25rem; /* 36px */
+  font-size: var(--font-4xl); /* 36px */
   font-weight: 700; 
   margin-bottom: 1rem;
 }
 
 h2 { 
-  font-size: 1.875rem; /* 30px */
+  font-size: var(--font-3xl); /* 30px */
   font-weight: 700; 
 }
 
 h3 { 
-  font-size: 1.5rem; /* 24px */
+  font-size: var(--font-2xl); /* 24px */
   font-weight: 600; 
 }
 
 h4 { 
-  font-size: 1.25rem; /* 20px */
+  font-size: var(--font-xl); /* 20px */
   font-weight: 600; 
 }
 
 h5 { 
-  font-size: 1.125rem; /* 18px */
+  font-size: var(--font-lg); /* 18px */
   font-weight: 500; 
 }
 
 h6 { 
-  font-size: 1rem; /* 16px */
+  font-size: var(--font-base); /* 16px */
   font-weight: 500; 
   color: var(--color-muted);
 }
@@ -72,78 +85,12 @@ h6 {
 /* ========== DEFAULT SPACING ========== */
 p {
   margin-bottom: 1rem;
-}/* ========== RESET ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-/* ========== GOOGLE FONT ========== */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap');
-
-/* ========== BASE TYPOGRAPHY ========== */
-:root {
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Lato', sans-serif;
-  
-  --color-text: #1a1a1a;
-  --color-heading: #111111;
-  --color-muted: #666666;
+small, .text-sm {
+  font-size: var(--font-sm); /* 14px */
 }
 
-html {
-  font-size: 16px; /* base size = 1rem */
-}
-
-body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: #ffffff;
-}
-
-/* ========== HEADINGS ========== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--color-heading);
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-
-h1 { 
-  font-size: 2.25rem; /* 36px */
-  font-weight: 700; 
-  margin-bottom: 1rem;
-}
-
-h2 { 
-  font-size: 1.875rem; /* 30px */
-  font-weight: 700; 
-}
-
-h3 { 
-  font-size: 1.5rem; /* 24px */
-  font-weight: 600; 
-}
-
-h4 { 
-  font-size: 1.25rem; /* 20px */
-  font-weight: 600; 
-}
-
-h5 { 
-  font-size: 1.125rem; /* 18px */
-  font-weight: 500; 
-}
-
-h6 { 
-  font-size: 1rem; /* 16px */
-  font-weight: 500; 
-  color: var(--color-muted);
-}
-
-/* ========== DEFAULT SPACING ========== */
-p {
-  margin-bottom: 1rem;
+.text-xs {
+  font-size: var(--font-xs); /* 12px */
 }
