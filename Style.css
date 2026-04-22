@@ -1,122 +1,119 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap');
 
-/* ========== BASE TYPOGRAPHY ========== */
+/* ===== Week 2 Task 3.4: Color Palette & Typography Scale ===== */
 :root {
-  /* Fonts */
+  /* Primary Blue Palette - 6 shades */
+  --color-primary-900: #0a3d62; /* darkest - headings, footer bg */
+  --color-primary-700: #1e5f8a; /* dark - h2, buttons */
+  --color-primary-500: #2980b9; /* base - links, accents */
+  --color-primary-300: #5dade2; /* light - hover states */
+  --color-primary-100: #aed6f1; /* lightest - backgrounds */
+  --color-accent: #e74c3c;      /* CTA/buttons for contrast */
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-100: #f8f9fa;    /* page background */
+  --color-gray-700: #495057;    /* body text */
+  --color-gray-900: #212529;    /* dark text */
+
+  /* Typography Scale - Major Third 1.250 */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Lato', sans-serif;
   
-  /* Type Scale */
-  --font-xs: 0.75rem;     /* 12px */
-  --font-sm: 0.875rem;    /* 14px */
-  --font-base: 1rem;      /* 16px */
-  --font-lg: 1.125rem;    /* 18px */
-  --font-xl: 1.25rem;     /* 20px */
-  --font-2xl: 1.5rem;     /* 24px */
-  --font-3xl: 1.875rem;   /* 30px */
-  --font-4xl: 2.25rem;    /* 36px */
+  --text-xs: 0.8rem;    /* 12.8px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px - body default */
+  --text-lg: 1.25rem;   /* 20px - h4 */
+  --text-xl: 1.563rem;  /* 25px - h3 */
+  --text-2xl: 1.953rem; /* 31px - h2 */
+  --text-3xl: 2.441rem; /* 39px - h1 */
   
-  /* Color Scheme - REPLACE WITH YOUR COLORS */
-  --color-primary: #2563EB;
-  --color-secondary: #F59E0B;
-  --color-background: #F9FAFB;
-  --color-text: #111827;
-  --color-muted: #6B7280;
-  
-  /* Color Variations - darker/lighter versions */
-  --color-primary-dark: #1D4ED8;
-  --color-primary-light: #DBEAFE;
+  /* Spacing Scale */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
 }
 
-html {
-  font-size: 16px;
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: var(--font-base);
+  font-size: var(--text-base);
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
 }
 
-/* ========== HEADINGS ========== */
-h1, h2, h3, h4, h5, h6 {
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  color: var(--color-text); /* headings use text color by default */
+  font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 0.75rem;
+  color: var(--color-primary-900);
+  margin-bottom: var(--space-sm);
 }
 
-h1 { 
-  font-size: var(--font-4xl);
-  font-weight: 700; 
-  margin-bottom: 1rem;
-  color: var(--color-primary); /* make h1 use primary color */
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); color: var(--color-primary-700); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p {
+  margin-bottom: var(--space-sm);
 }
 
-h2 { 
-  font-size: var(--font-3xl);
-  font-weight: 700; 
-}
-
-h3 { 
-  font-size: var(--font-2xl);
-  font-weight: 600; 
-}
-
-h4 { 
-  font-size: var(--font-xl);
-  font-weight: 600; 
-}
-
-h5 { 
-  font-size: var(--font-lg);
-  font-weight: 500; 
-}
-
-h6 { 
-  font-size: var(--font-base);
-  font-weight: 500; 
-  color: var(--color-muted);
-}
-
-/* ========== LINKS & BUTTONS ========== */
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-500);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-300);
   text-decoration: underline;
 }
 
-button, .button {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.375rem;
-  font-family: var(--font-body);
-  font-size: var(--font-base);
-  cursor: pointer;
+/* ===== Layout ===== */
+header {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-lg);
 }
 
-button:hover, .button:hover {
-  background-color: var(--color-primary-dark);
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
 }
 
-/* ========== DEFAULT SPACING ========== */
-p {
-  margin-bottom: 1rem;
+nav a {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
 }
 
-small, .text-sm {
-  font-size: var(--font-sm);
-  color: var(--color-muted);
+nav a:hover {
+  color: var(--color-primary-100);
+  text-decoration: none;
 }
 
-.text-xs {
-  font-size: var(--font-xs);
-  color: var(--color-muted);
-  }
+main {
+  max-width: 1100px;
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-sm);
+}
+
+footer {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-xl);
+}
