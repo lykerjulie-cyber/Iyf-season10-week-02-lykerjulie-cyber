@@ -117,3 +117,152 @@ footer {
   padding: var(--space-md);
   margin-top: var(--space-xl);
 }
+/* ===== Week 2 Task 3.5: Styled Components ===== */
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-base);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-accent:hover {
+  background-color: #c0392b; /* darker red */
+  transform: translateY(-2px);
+}
+
+/* Cards - for projects.html */
+.card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.card h3 {
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-xs);
+}
+
+/* Forms - for contact.html */
+form {
+  background-color: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  border: 2px solid var(--color-primary-100);
+  border-radius: 4px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-primary-700);
+  padding: 0 var(--space-xs);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--color-gray-900);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  border: 2px solid var(--color-primary-100);
+  border-radius: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+input[type="checkbox"] {
+  margin-right: var(--space-xs);
+}
+
+/* Nav active state */
+nav a.active {
+  color: var(--color-primary-100);
+  border-bottom: 2px solid var(--color-primary-100);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+    }
