@@ -1,7 +1,4 @@
-  max-width: 1100px;
-  margin: var(--space-lg) auto;
-  padding: 0 var(--space-sm);
-}/* ===== Google Fonts ===== */
+/* ===== Google Fonts ===== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap');
 
 /* ===== Week 2 Task 3.4: Color Palette & Typography Scale ===== */
@@ -108,7 +105,10 @@ nav a:hover {
 }
 
 main {
-
+  max-width: 1100px;
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-sm);
+}
 
 footer {
   background-color: var(--color-primary-900);
@@ -117,6 +117,7 @@ footer {
   padding: var(--space-md);
   margin-top: var(--space-xl);
 }
+
 /* ===== Week 2 Task 3.5: Styled Components ===== */
 
 /* Buttons */
@@ -160,7 +161,7 @@ footer {
 }
 
 .btn-accent:hover {
-  background-color: #c0392b; /* darker red */
+  background-color: #c0392b;
   transform: translateY(-2px);
 }
 
@@ -240,24 +241,7 @@ textarea:focus {
   outline: none;
   border-color: var(--color-primary-500);
   box-shadow: 0 0 0 3px var(--color-primary-100);
-}/* ===== Week 2 Task 3.6: Responsive ===== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  h1 { font-size: var(--text-2xl); }
-  h2 { font-size: var(--text-xl); }
-  
-  main {
-    padding: 0 var(--space-sm);
-  }
-  
-  .card {
-    padding: var(--space-sm);
-  }
-  }
+}
 
 input[type="checkbox"] {
   margin-right: var(--space-xs);
@@ -282,24 +266,313 @@ nav a.active {
 
 .mt-lg {
   margin-top: var(--space-lg);
-    }
+}
+
 /* ===== Week 2 Task 3.6: Responsive ===== */
 @media (max-width: 768px) {
+  /* Stack nav vertically on mobile */
   nav ul {
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
+    align-items: flex-start;
   }
   
+  /* Smaller headings on mobile */
   h1 { font-size: var(--text-2xl); }
   h2 { font-size: var(--text-xl); }
+  h3 { font-size: var(--text-lg); }
   
+  /* Tighter spacing */
   main {
+    margin: var(--space-md) auto;
     padding: 0 var(--space-sm);
   }
   
+  header {
+    padding: var(--space-sm);
+  }
+  
+  /* Cards take full width */
   .card {
     padding: var(--space-sm);
   }
+  
+  /* Buttons stack if needed */
+  .btn {
+    display: block;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+  }
+  }/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+/* ===== Week 2 Task 3.4: Color Palette & Typography Scale ===== */
+:root {
+  /* Primary Blue Palette - 6 shades */
+  --color-primary-900: #0a3d62; /* darkest - headings, footer bg */
+  --color-primary-700: #1e5f8a; /* dark - h2, buttons */
+  --color-primary-500: #2980b9; /* base - links, accents */
+  --color-primary-300: #5dade2; /* light - hover states */
+  --color-primary-100: #aed6f1; /* lightest - backgrounds */
+  --color-accent: #e74c3c;      /* CTA/buttons for contrast */
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-gray-100: #f8f9fa;    /* page background */
+  --color-gray-700: #495057;    /* body text */
+  --color-gray-900: #212529;    /* dark text */
+
+  /* Typography Scale - Major Third 1.250 */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  
+  --text-xs: 0.8rem;    /* 12.8px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px - body default */
+  --text-lg: 1.25rem;   /* 20px - h4 */
+  --text-xl: 1.563rem;  /* 25px - h3 */
+  --text-2xl: 1.953rem; /* 31px - h2 */
+  --text-3xl: 2.441rem; /* 39px - h1 */
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary-900);
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); color: var(--color-primary-700); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+a {
+  color: var(--color-primary-500);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-300);
+  text-decoration: underline;
+}
+
+/* ===== Layout ===== */
+header {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+}
+
+nav a {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--color-primary-100);
+  text-decoration: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-sm);
+}
+
+footer {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+/* ===== Week 2 Task 3.5: Styled Components ===== */
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-base);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-accent:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Cards - for projects.html */
+.card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.card h3 {
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-xs);
+}
+
+/* Forms - for contact.html */
+form {
+  background-color: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  border: 2px solid var(--color-primary-100);
+  border-radius: 4px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-primary-700);
+  padding: 0 var(--space-xs);
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--color-gray-900);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  border: 2px solid var(--color-primary-100);
+  border-radius: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+input[type="checkbox"] {
+  margin-right: var(--space-xs);
+}
+
+/* Nav active state */
+nav a.active {
+  color: var(--color-primary-100);
+  border-bottom: 2px solid var(--color-primary-100);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
 /* ===== Week 2 Task 3.6: Responsive ===== */
 @media (max-width: 768px) {
   /* Stack nav vertically on mobile */
