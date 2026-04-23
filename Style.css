@@ -240,7 +240,24 @@ textarea:focus {
   outline: none;
   border-color: var(--color-primary-500);
   box-shadow: 0 0 0 3px var(--color-primary-100);
-}
+}/* ===== Week 2 Task 3.6: Responsive ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+  
+  main {
+    padding: 0 var(--space-sm);
+  }
+  
+  .card {
+    padding: var(--space-sm);
+  }
+  }
 
 input[type="checkbox"] {
   margin-right: var(--space-xs);
@@ -266,3 +283,21 @@ nav a.active {
 .mt-lg {
   margin-top: var(--space-lg);
     }
+/* ===== Week 2 Task 3.6: Responsive ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+  
+  main {
+    padding: 0 var(--space-sm);
+  }
+  
+  .card {
+    padding: var(--space-sm);
+  }
+
